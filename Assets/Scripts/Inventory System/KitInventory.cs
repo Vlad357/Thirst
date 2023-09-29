@@ -7,20 +7,14 @@ namespace Aquapunk
 {
     public class KitInventory : MonoBehaviour
     {
-        #region Fields
-        [Header("Main settings")]
         public PlayerInfo playerInfo;
 
-        [Header("Inventory main kit and player model")]
         public GameObject playerModel;
         public Image weaponIcon;
         public Image toolIcon;
         public Image armorIcon;
         public Image artefactIcon;
-        #endregion
 
-        #region Methods
-        #region Class Methods
         public void UpdateInventoryKit(Item item)
         {
             switch (item.type)
@@ -39,14 +33,5 @@ namespace Aquapunk
                     break;
             }
         }
-        #endregion
-        #region Unity Methods
-
-        //private void Awake()
-        //{
-        //    playerInfo.player.setNewItem += UpdateInventoryKit;
-        //}
-        #endregion
-        #endregion
     }
 }

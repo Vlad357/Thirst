@@ -21,17 +21,17 @@ namespace Aquapunk
         public bool isRangeAttack;
         private void Update()
         {
-            if (isButtonMelleAttackPressed && !player.isAttack && player._timeAttackCoolDown <= 0)
+            if (isButtonMelleAttackPressed && !player.isAttack && player.TimeAttackCoolDown <= 0)
             {
                 melleAttack.Invoke();
             }
 
-            if (player.shotCount >= 3 && !isButtonRangeAttackPressed && isRangeAttack && player.endShot && player._timeAttackCoolDown <= 0)
+            if (player.shotCount >= 3 && !isButtonRangeAttackPressed && isRangeAttack && player.endShot && player.TimeAttackCoolDown <= 0)
             {
                 isRangeAttack = false;
                 player.Unarmed();
             }
-            if (isRangeAttack && player._timeAttackCoolDown <= 0)
+            if (isRangeAttack && player.TimeAttackCoolDown <= 0)
             {
                 rangeAttack.Invoke();
             }
@@ -54,7 +54,6 @@ namespace Aquapunk
         {
             isButtonMelleAttackPressed = true;
         }
-
 
         public void OnEndAttack()
         {

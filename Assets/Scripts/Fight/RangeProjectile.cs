@@ -10,19 +10,16 @@ namespace Aquapunk
         public TypeProjectile typeProjectile;
         public Entity owner;
 
-        [SerializeField]
-        protected float _liveTime;
-        [SerializeField]
-        protected float _speed;
-        [SerializeField]
-        protected float _damage;
+        [SerializeField] protected float _liveTime;
+        [SerializeField] protected float _speed;
+        [SerializeField] protected float _damage;
+
         protected Rigidbody _rigidbody;
 
         private void DeathPrijectile()
         {
             Destroy(gameObject);
         }
-
 
         private void OnCollisionEnter(Collision collision)
         {

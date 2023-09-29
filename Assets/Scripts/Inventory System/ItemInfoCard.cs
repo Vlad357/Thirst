@@ -9,28 +9,12 @@ namespace Aquapunk
 {
     public class ItemInfoCard : MonoBehaviour
     {
-        #region Fields
-        public Image ItemIcon;
         public TextMeshProUGUI ItemName;
         public TextMeshProUGUI ItemInfo;
-        public Button applyItemButton;
         public PlayerInfo playerInfo;
-        #endregion
-        #region Methods
-        #region ClassMethods
-        //public void GetItemInfo(Item item)
-        //{
-        //    Apply(item);
-        //    if(item.type != Item.TypeItem.Default)
-        //    {
-        //        applyItemButton.gameObject.SetActive(true);
-        //        applyItemButton.onClick.AddListener(() => playerInfo.player.SetItem(item));
-        //    }
-        //    else
-        //    {
-        //        applyItemButton.gameObject.SetActive(false);
-        //    }
-        //}
+        public Button applyItemButton;
+        public Image ItemIcon;
+
 
         protected void Apply(Scriptable scriptable)
         {
@@ -39,7 +23,5 @@ namespace Aquapunk
             ItemName.text = scriptable.title;
             ItemInfo.text = scriptable.info;
         }
-        #endregion
-        #endregion
     }
 }

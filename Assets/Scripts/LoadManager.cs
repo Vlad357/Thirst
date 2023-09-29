@@ -11,12 +11,6 @@ namespace Aquapunk
     {
         private string _filePath;
 
-        private void Start()
-        {
-            _filePath = Application.persistentDataPath + "/save.gamesave";
-            LoadGame();
-        }
-
         public void SaveGame()
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -47,29 +41,22 @@ namespace Aquapunk
             FindObjectOfType<Player>().WaterCounter = save.count;
             FindObjectOfType<Player>().UpdateWaterCount();
         }
+
+        private void Start()
+        {
+            _filePath = Application.persistentDataPath + "/save.gamesave";
+            LoadGame();
+        }
     }
 
     [System.Serializable]
     public class Save
     {
-        //[System.Serializable]
-        //public struct WaterCount
-        //{
-        //    public float count;
-        //
-        //    public WaterCount(float count)
-        //    {
-        //        this.count = count;
-        //    }
-        //}
-
         public float count;
 
         public void SaveWater(Player player)
         {
             count = player.WaterCounter;
         }
-
-
     }
 }

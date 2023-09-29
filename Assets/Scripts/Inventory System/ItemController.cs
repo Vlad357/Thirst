@@ -6,12 +6,9 @@ namespace Aquapunk
 {
     public class ItemController : MonoBehaviour
     {
-        #region Fields
         public Item item;
         public float coolDown = 0.3f;
-        #endregion
-        #region Methods
-        #region ClassMethods
+
         private void PickUpItem(Player player)
         {
             if (player != null)
@@ -20,8 +17,7 @@ namespace Aquapunk
                 Destroy(gameObject);
             }
         }
-        #endregion
-        #region UnityMethods
+
         private void OnTriggerEnter(Collider other)
         {
             if(coolDown <= 0)
@@ -29,6 +25,7 @@ namespace Aquapunk
                 PickUpItem(other.GetComponent<Player>());
             }
         }
+
         private void Update()
         {
             if(coolDown >= 0)
@@ -36,9 +33,6 @@ namespace Aquapunk
                 coolDown -= Time.deltaTime;
             }
         }
-        #endregion
-        #endregion
-
     }
 }
 

@@ -12,8 +12,7 @@ namespace Aquapunk
         public Player player;
         public float buildOrthoSize, trevelOrthoSize;
 
-        [SerializeField]
-        private CinemachineVirtualCamera VirtualCamera;
+        [SerializeField] private CinemachineVirtualCamera VirtualCamera;
 
         public void OnBuildMod()
         {

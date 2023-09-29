@@ -96,7 +96,7 @@ namespace RPGCharacterAnims
 		public void EndShot()
         {
 			entity.endShot = true;
-			entity._timeAttackCoolDown = 0;
+			entity.TimeAttackCoolDown = 0;
         }
 
 		public void Hit()
