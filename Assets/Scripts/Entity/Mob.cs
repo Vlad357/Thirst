@@ -7,7 +7,7 @@ using RPGCharacterAnims;
 using RPGCharacterAnims.Lookups;
 using RPGCharacterAnims.Actions;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class Mob : Entity
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class BlaskoutScript : MonoBehaviour
     {

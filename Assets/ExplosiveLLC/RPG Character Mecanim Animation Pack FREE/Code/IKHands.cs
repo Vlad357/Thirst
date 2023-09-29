@@ -2,7 +2,7 @@
 using System.Collections;
 using RPGCharacterAnims.Lookups;
 using UnityEngine;
-using Aquapunk;
+using Thirst;
 
 namespace RPGCharacterAnims
 {

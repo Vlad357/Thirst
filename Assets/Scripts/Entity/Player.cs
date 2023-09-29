@@ -4,7 +4,7 @@ using UnityEngine;
 using RPGCharacterAnims;
 using RPGCharacterAnims.Lookups;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class Player : Entity
     {

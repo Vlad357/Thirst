@@ -1,19 +1,23 @@
 using UnityEngine;
 
-public class ProjectileTrack : MonoBehaviour
+namespace Thirst
 {
-    public Transform target;
-    public Vector3 offset;
-
-    private void Update()
+    public class ProjectileTrack : MonoBehaviour
     {
-        if (target != null)
+        public Transform target;
+        public Vector3 offset;
+
+        private void Update()
         {
-            transform.position = target.position+offset;
-        }
-        else
-        {
-            Destroy(gameObject);
+            if (target != null)
+            {
+                transform.position = target.position + offset;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
+

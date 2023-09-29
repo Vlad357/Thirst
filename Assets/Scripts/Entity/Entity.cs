@@ -7,7 +7,7 @@ using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Lookups;
 using DG.Tweening;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class Entity : MonoBehaviour
     {
@@ -46,7 +46,7 @@ namespace Aquapunk
             _timeForceCoolDown, _forceCoolDown = 0.3f,
             _timeProjectileCoolDown, _projectileCoolDown = 0.1f;
 
-        protected Vector3 _projetileSpawnOffser;
+        protected Vector3 _projetileSpawnOffset = new Vector3(0, 1, 0);
         protected Vector3 _attackOffset;
         protected TypeAttack _typeAttack;
         protected StateEntity _state = StateEntity.Idle;
@@ -97,8 +97,8 @@ namespace Aquapunk
             Vector3 spwnProjectilePoint = transform.position;
             spwnProjectilePoint.y = 0 + transform.position.y;
 
-            RangeProjectile projectileObj = Instantiate(projectile, spwnProjectilePoint + _projetileSpawnOffser, new Quaternion(0, 0, 0, 0)).GetComponent<RangeProjectile>();
-            ProjectileTrack projectileTraleObj = Instantiate(projectileTrale, transform.position + _projetileSpawnOffser, transform.rotation).GetComponent<ProjectileTrack>();
+            RangeProjectile projectileObj = Instantiate(projectile, spwnProjectilePoint + _projetileSpawnOffset, new Quaternion(0, 0, 0, 0)).GetComponent<RangeProjectile>();
+            ProjectileTrack projectileTraleObj = Instantiate(projectileTrale, transform.position + _projetileSpawnOffset, transform.rotation).GetComponent<ProjectileTrack>();
             projectileTraleObj.target = projectileObj.transform;
 
             projectileObj.direction = transform.forward +

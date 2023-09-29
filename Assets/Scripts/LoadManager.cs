@@ -2,9 +2,8 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace Aquapunk
+namespace Thirst
 {
-
     public class LoadManager : MonoBehaviour
     {
         private string _filePath;

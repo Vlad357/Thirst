@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Aquapunk
+namespace Thirst
 {
     [CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")]
     public class Item : Scriptable

@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class CameraModifier : MonoBehaviour
     {

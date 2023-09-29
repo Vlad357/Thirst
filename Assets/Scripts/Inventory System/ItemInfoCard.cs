@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class ItemInfoCard : MonoBehaviour
     {

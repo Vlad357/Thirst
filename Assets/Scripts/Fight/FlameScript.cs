@@ -1,15 +1,19 @@
 using UnityEngine;
 
-public class FlameScript : MonoBehaviour
+namespace Thirst
 {
-    public Transform rider;
-
-    private void Update()
+    public class FlameScript : MonoBehaviour
     {
-        if(rider != null)
+        public Transform rider;
+
+        private void Update()
         {
-            transform.position = rider.transform.position;
-            transform.rotation = rider.transform.rotation;
+            if (rider != null)
+            {
+                transform.position = rider.transform.position;
+                transform.rotation = rider.transform.rotation;
+            }
         }
     }
 }
+

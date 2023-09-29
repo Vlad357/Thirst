@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class RangeProjectile : MonoBehaviour
     {
@@ -21,6 +21,7 @@ namespace Aquapunk
 
         private void OnCollisionEnter(Collision collision)
         {
+            print(collision.gameObject);
             if (collision.gameObject.GetComponent<Entity>())
             {
                 collision.gameObject.GetComponent<Entity>().setDamage(_damage, owner);
@@ -32,7 +33,7 @@ namespace Aquapunk
         {
             if(_liveTime > 0)
             {
-                //_rigidbody.AddForce(direction.normalized * _speed);
+                print(direction);
                 transform.Translate(direction.normalized * Time.fixedDeltaTime * _speed);
                 _liveTime -= Time.fixedDeltaTime;
             }

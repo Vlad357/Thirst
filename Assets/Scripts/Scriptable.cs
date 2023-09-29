@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class Scriptable : ScriptableObject
     {

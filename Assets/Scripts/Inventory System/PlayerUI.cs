@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Aquapunk
+namespace Thirst
 {
     public class PlayerUI : MonoBehaviour
     {
