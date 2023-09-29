@@ -19,7 +19,7 @@ namespace Thirst
 
         [Header("Attack")]
         public float shotCount;
-        public float projectileMaxDeflection;
+        public float projectileMaxDeflection = 1;
         public float projectileMinDeflection;
         public float projectileDeflection;
         public float recoil;

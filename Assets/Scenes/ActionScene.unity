@@ -12299,6 +12299,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7131009956403228952}
     - target: {fileID: 6815738945491980051, guid: ca017fb21d4b3944e90a18e281424f12, type: 3}
+      propertyPath: _projetileSpawnOffset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815738945491980051, guid: ca017fb21d4b3944e90a18e281424f12, type: 3}
       propertyPath: projectileMaxDeflection
       value: 2
       objectReference: {fileID: 0}
