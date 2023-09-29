@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 using RPGCharacterAnims;
 using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Lookups;
-using UnityEngine.InputSystem.OnScreen;
 using DG.Tweening;
 
 namespace Aquapunk

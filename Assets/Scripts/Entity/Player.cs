@@ -1,13 +1,8 @@
 using Cinemachine;
-using DG.Tweening;
-using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using RPGCharacterAnims;
-using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Lookups;
-using UnityEngine.InputSystem.OnScreen;
 
 namespace Aquapunk
 {
