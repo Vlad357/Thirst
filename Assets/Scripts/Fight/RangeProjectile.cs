@@ -21,7 +21,6 @@ namespace Thirst
 
         private void OnCollisionEnter(Collision collision)
         {
-            print(collision.gameObject);
             if (collision.gameObject.GetComponent<Entity>())
             {
                 collision.gameObject.GetComponent<Entity>().setDamage(_damage, owner);
@@ -33,7 +32,6 @@ namespace Thirst
         {
             if(_liveTime > 0)
             {
-                print(direction);
                 transform.Translate(direction.normalized * Time.fixedDeltaTime * _speed);
                 _liveTime -= Time.fixedDeltaTime;
             }

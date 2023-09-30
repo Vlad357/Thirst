@@ -243,7 +243,6 @@ namespace RPGCharacterAnims
 
         private void Idle_EnterState()
         {
-			if (debugMessages) { Debug.Log("Idle_EnterState"); }
 			superCharacterController.EnableSlopeLimit();
             superCharacterController.EnableClamping();
             canJump = true;

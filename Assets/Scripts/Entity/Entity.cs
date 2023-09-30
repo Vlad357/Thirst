@@ -301,8 +301,6 @@ namespace Thirst
                     rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext("Attack", Side.None));
                     _timeAttackCoolDown = _attackCollDown;
                     endShot = false;
-
-                    if (rpgCharacterController.CanEndAction(HandlerTypes.Attack)) { print("все!"); }
                 }
             }
         }
