@@ -3,24 +3,27 @@ using System.Collections;
 using RPGCharacterAnims.Lookups;
 using UnityEngine;
 using Thirst;
+using System;
 
 namespace RPGCharacterAnims
 {
     public class IKHands : MonoBehaviour
     {
-
+		public Action LastShotInLine;
 		public GameObject moveTrale;
 		public Entity entity;
-        private Animator animator;
-        private RPGCharacterWeaponController rpgCharacterWeaponController;
         public Transform leftHandObj;
         public Transform attachLeft;
         public bool canBeUsed;
 		public bool isUsed;
         [Range(0, 1)] public float leftHandPositionWeight;
         [Range(0, 1)] public float leftHandRotationWeight;
+
         private Transform blendToTransform;
 		private Coroutine co;
+
+        private Animator animator;
+        private RPGCharacterWeaponController rpgCharacterWeaponController;
 
         private void Awake()
         {
@@ -87,17 +90,12 @@ namespace RPGCharacterAnims
 		public void Shot()
         {
 			entity.RangeShot();
-			if (entity.shotCount != 3)
-			{
-				entity.shotCount += 1;
-			}
 		}
 
-		public void EndShot()
-        {
-			entity.endShot = true;
-			entity.TimeAttackCoolDown = 0;
-        }
+		public void LastShot()
+		{
+			LastShotInLine?.Invoke();
+		}
 
 		public void Hit()
         {

@@ -119,6 +119,7 @@ namespace Thirst
             _playerUI.onBeginRangeAttackAction = () => RangeArmed();
             _playerUI.rangeAttack = () => Attack();
             _playerUI.player = this;
+            _playerUI.LateShotSubscribe();
         }
 
         public delegate void SetPostItem(Item item);

@@ -19,11 +19,6 @@ namespace Thirst
 
         [Header("Attack")]
         public float shotCount;
-        public float projectileMaxDeflection = 1;
-        public float projectileMinDeflection;
-        public float projectileDeflection;
-        public float recoil;
-        
 
         public bool notBurn;
         public bool endShot = true;
@@ -46,7 +41,7 @@ namespace Thirst
             _timeForceCoolDown, _forceCoolDown = 0.3f,
             _timeProjectileCoolDown, _projectileCoolDown = 0.1f;
 
-        protected Vector3 _projetileSpawnOffset = new Vector3(0, 1, 0);
+        protected Vector3 _projetileSpawnOffset = new Vector3(0, 1.4f, 0);
         protected Vector3 _attackOffset;
         protected TypeAttack _typeAttack;
         protected StateEntity _state = StateEntity.Idle;
@@ -101,12 +96,11 @@ namespace Thirst
             ProjectileTrack projectileTraleObj = Instantiate(projectileTrale, transform.position + _projetileSpawnOffset, transform.rotation).GetComponent<ProjectileTrack>();
             projectileTraleObj.target = projectileObj.transform;
 
-            projectileObj.direction = transform.forward +
-                new Vector3(
-                    UnityEngine.Random.Range(0, projectileDeflection),
-                    UnityEngine.Random.Range(0, projectileDeflection),
-                    UnityEngine.Random.Range(0, projectileDeflection)).normalized;
+            projectileObj.direction = transform.forward;
+
             projectileObj.owner = this;
+
+            shotCount++;
         }
         public virtual void setDamage(float damage, Entity entity)
         {
@@ -214,7 +208,6 @@ namespace Thirst
             if (!rpgCharacterController.HandlerExists(HandlerTypes.SwitchWeapon)) { return; }
 
             var doSwitch = false;
-            projectileDeflection = projectileMinDeflection;
             _typeAttack = TypeAttack.Range;
             // Create a new SwitchWeaponContext with the switch settings.
             var switchWeaponContext = new SwitchWeaponContext();
@@ -276,16 +269,6 @@ namespace Thirst
         {
             if(_timeAttackCoolDown <= 0)
             {
-                
-                if (projectileDeflection < projectileMaxDeflection)
-                {
-                    projectileDeflection += 0.05f;
-                }
-                if(projectileDeflection >= projectileMaxDeflection)
-                {
-                    projectileDeflection = projectileMinDeflection;
-                }
-
                 if (trigger != null)
                 {
                     Vector3 direction = trigger.transform.position - transform.position;
