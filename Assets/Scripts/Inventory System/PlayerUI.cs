@@ -46,7 +46,6 @@ namespace Thirst
         {
             if (player.shotCount >= 3 && !isButtonRangeAttackPressed && isRangeAttack)
             {
-                print("last shot");
                 isRangeAttack = false;
                 player.Unarmed();
             }

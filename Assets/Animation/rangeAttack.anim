@@ -24358,8 +24358,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
-    functionName: EndShot
+  - time: 1.0833334
+    functionName: LastShot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -32,7 +32,7 @@ namespace Thirst
         public Transform atackPoint;
         public List<GameObject> enemys;
 
-        protected float _attackRange = 2, _attackDamage = 75;
+        [SerializeField]protected float _attackRange = 2, _attackDamage = 75;
         protected float _melleHitAnimTime = 0.5f;
         protected float _forceRangeMultiplyRange = 10,
             _forceRangeMultiplyMelee = 100, _forceRangeMultiplyTick = 50; 
@@ -159,10 +159,22 @@ namespace Thirst
         }
         public virtual void SortTrigger(GameObject gameObjectObj = null)
         {
-            if (trigger == null && gameObjectObj != null && gameObjectObj.GetComponent<Entity>()._state != StateEntity.Death)
+            if(gameObjectObj != null && enemys.Count == 1)
             {
-                trigger = gameObjectObj;
+                if (gameObjectObj.TryGetComponent(out Entity objDetected) 
+                    && objDetected._state != StateEntity.Death 
+                    && trigger == null)
+                {
+                    trigger = gameObjectObj;
+                }
             }
+            
+
+
+            //if (trigger == null && gameObjectObj != null && gameObjectObj.GetComponent<Entity>()._state != StateEntity.Death)
+            //{
+            //    trigger = gameObjectObj;
+            //}
             if (trigger != null)
             {
                 if (enemys.Count > 1)
@@ -186,13 +198,14 @@ namespace Thirst
                         }
                     }
                 }
-                if (enemys != null
-                    || gameObjectObj.GetComponent<Entity>()!._state == StateEntity.Death
+                if (gameObjectObj.GetComponent<Entity>()._state == StateEntity.Death
                     && trigger.gameObject == gameObjectObj)
                 {
                     trigger = null;
                 }
             }
+
+
 
         }
 

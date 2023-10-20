@@ -173,7 +173,7 @@ namespace Thirst
                 {
                     enemys.Add(other.gameObject);
                 }
-                SortTrigger();
+                SortTrigger(other.gameObject);
             }
         }
         private void OnCollisionStay(Collision collision)
